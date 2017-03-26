@@ -24,7 +24,7 @@ function generateSerial(permanent) {
     if(permanent == "Select model")
         return "Please select a model first!";
 
-    return (random(11,15) + "30" + permanent + "n" + padLeft(random(1,999),3) + random(1,999)).toUpperCase();
+    return (random(11,15) + "30" + permanent + "n" + padLeft(random(1,999999),6)).toUpperCase();
 }
 
 function padLeft(nr, n) {
