@@ -1,0 +1,13 @@
+[
+	{ "model": "DS3615xs", "permanent": "LW" },
+	{ "model": "DS3611xs", "permanent": "JF" },
+	{ "model": "DS3612xs", "permanent": "KI" },
+	{ "model": "DS411", "permanent": "J1" },
+	{ "model": "DS411+II", "permanent": "K2" },
+	{ "model": "DS412+", "permanent": "KF" },
+	{ "model": "DS413j", "permanent": "KV" },
+	{ "model": "DS211+", "permanent": "J3" },
+	{ "model": "DS212", "permanent": "K3" },
+	{ "model": "DS212+", "permanent": "KB" },
+	{ "model": "DS212j", "permanent": "K8" }
+]

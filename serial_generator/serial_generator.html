@@ -2,63 +2,33 @@
 <html>
 
 <head>
-    <title>XPenology Serial Generator</title>
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <title>XPEnology Serial Generator</title>
 
-    <style>
-        body {
-            padding: 16px;
-        }
-        input {
-            margin: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+
+    <link rel='stylesheet' href='style.css' />
+    <script src='script.js'></script>
 </head>
 
-<body translate="no">
+<body>
 
-    <h1>Synology NAS Serial Number and MAC address Generator</h1>
+    <h1>XPEnology Serial Generator</h1>
 
     <div>
+        <select name="model" id="model"></select>
+        <br/>
+
+        <input id="generate" type=button value="Generate" /><br/><br/>
+
         <input id="sn" placeholder="Serial number" />
-        <br/>
-        <input id="mac" value="" placeholder="MAC address" />
-        <br/>
-        <input id="generate" type=button value="Generate" />
     </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
-
-    <script>
-        window.onload = function() {
-            $ = function(id) {
-                return document.getElementById(id);
-            };
-
-            $("generate").onclick = function() {
-                $("sn").value = generateSerial("lw");
-                $("mac").value = generateMac();
-            };
-        };
-
-        function generateMac() {
-            return "001132" + random(10, 16777215).toString(16).toUpperCase();
-        }
-
-        function generateSerial(permanent) {
-            return ("abc".charAt(random(0, 2)) + random(1, 9) + permanent + "N0" + padLeft(random(0, 9999), 4)).toUpperCase();
-        }
-
-        function padLeft(nr, n) {
-            return Array(n - String(nr).length + 1).join('0') + nr;
-        }
-
-        function random(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-    </script>
 
 </body>
 
